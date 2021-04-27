@@ -68,6 +68,8 @@ def chatbot_response(msg):
 import tkinter
 from tkinter import *
 
+CMD = ['打开灯泡']
+
 
 def send():
     msg = EntryBox.get("1.0",'end-1c').strip()
@@ -77,7 +79,15 @@ def send():
         ChatLog.config(state=NORMAL)
         ChatLog.insert(END, "You: " + msg + '\n\n')
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
-    
+
+	if msg in CMD:
+        res = msg[2:] + "已经打开"
+        #todo 调用jetson函数，执行相应操作
+        ChatLog.insert(END, "Bot: " + res + '\n\n')
+            
+        ChatLog.config(state=DISABLED)
+        ChatLog.yview(END)
+	else:
         res = chatbot_response(msg)
         ChatLog.insert(END, "Bot: " + res + '\n\n')
             

@@ -18,7 +18,7 @@ Python编写的开源人工神经网络库，可以作为Tensorflow、Microsoft-
 # Run
 ## Env
 ### jetson env
-jetson env取决于辅助者本地环境
+jetson env取决于student本地环境
 ### chatbot
 1. mac安装conda
 ```
@@ -32,4 +32,9 @@ ref:https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html
 ```
 conda create -n cb python=3.6
 source activate cb
+pip install -r req.txt
+```
+3. 运行程序
+```
+python chatgui.py
 ```

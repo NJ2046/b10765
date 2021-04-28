@@ -79,21 +79,20 @@ def send():
         ChatLog.config(state=NORMAL)
         ChatLog.insert(END, "You: " + msg + '\n\n')
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
-
-	if msg in CMD:
-        res = msg[2:] + "已经打开"
-        #todo 调用jetson函数，执行相应操作
-        ChatLog.insert(END, "Bot: " + res + '\n\n')
-            
-        ChatLog.config(state=DISABLED)
-        ChatLog.yview(END)
-	else:
-        res = chatbot_response(msg)
-        ChatLog.insert(END, "Bot: " + res + '\n\n')
-            
-        ChatLog.config(state=DISABLED)
-        ChatLog.yview(END)
- 
+        if msg in CMD:
+            res = msg[2:] + "已经打开"
+            # student call jetson function, exec action
+            # add me wechat 765115556 if you have any questions
+            ChatLog.insert(END, "Bot: " + res + '\n\n')
+                
+            ChatLog.config(state=DISABLED)
+            ChatLog.yview(END)
+        else:
+            res = chatbot_response(msg)
+            ChatLog.insert(END, "Bot: " + res + '\n\n')
+                
+            ChatLog.config(state=DISABLED)
+            ChatLog.yview(END)
 
 base = Tk()
 base.title("Hello")

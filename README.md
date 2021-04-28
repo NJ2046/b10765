@@ -15,3 +15,21 @@ Python编写的开源人工神经网络库，可以作为Tensorflow、Microsoft-
 ### Module
 - 功能词汇表：定制功能词汇表，比如，打开灯泡，打开加湿器，打开窗帘；词典优先级最高，匹配到词汇后，调用jetson硬件接口。
 - 闲聊机器人：如果没有匹配到词汇走闲聊机器人。
+# Run
+## Env
+### jetson env
+jetson env取决于辅助者本地环境
+### chatbot
+1. mac安装conda
+```
+1. wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+2. bash ~/miniconda.sh -b -p $HOME/miniconda
+3. source $HOME/miniconda/bin/activate
+4. conda init zsh
+ref:https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html#install-macos-silent
+```
+2. 使用conda创建chatbot运行环境
+```
+conda create -n cb python=3.6
+source activate cb
+```

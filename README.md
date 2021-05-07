@@ -30,7 +30,7 @@ ref:https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html
 ```
 2. 使用conda创建chatbot运行环境
 ```
-conda create -n cb python=3.6
+conda create -n cb python=3.5
 source activate cb
 pip install -r req.txt
 ```
